@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private InputAction MovementControlls;
+    private Vector2 moveDirection;
 
     private void OnEnable()
     {
@@ -15,5 +16,10 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         MovementControlls.Disable();
+    }
+
+    private void Update()
+    {
+        moveDirection = MovementControlls.ReadValue<Vector2>();
     }
 }
